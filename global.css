@@ -52,6 +52,31 @@ body {
 /* ---------- Lab 1: The Film Strip ---------- */
 /* YOUR CODE: Lab 1, the window and the spin */
 
+.coin-window {
+  height: 64px;
+  width: 64px;
+  border: 1px red dashed;
+  overflow: hidden;
+}
+
+.coin-window img {
+  transform: translateX(0);
+}
+
+@keyframes spin {
+
+  from { 
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.coin-window img {
+  animation: .6s steps(8) infinite spin;
+}
 
 /* ---------- Lab 2: Byte Walks ---------- */
 .robot-row {
@@ -71,6 +96,72 @@ body {
 
 /* YOUR CODE: Lab 2, the windows and four directions */
 
+.robot-window {
+  height: 128px;
+  width: 128px;
+  overflow: hidden;
+}
+
+.robot-window img {
+  transform: translateX(0);
+  transition: transform .2s;
+}
+
+.robot-sheet:hover {
+  animation: 1s steps(4) infinite walk-down;
+}
+
+.walk-down .robot-sheet {
+  animation-name: walk-down;
+}
+
+.walk-left .robot-sheet {
+  animation-name: walk-left;
+}
+
+.walk-right .robot-sheet {
+  animation-name: walk-right;
+}
+
+.walk-up .robot-sheet {
+  animation-name: walk-up;
+}
+
+@keyframes walk-down {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes walk-left {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 100%);
+  }
+}
+
+@keyframes walk-right {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, -100%);
+  }
+}
+
+@keyframes walk-up {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, -100%);
+  }
+}
 
 /* ---------- Lab 3: The Stage ---------- */
 .stage {
@@ -81,6 +172,10 @@ body {
 }
 
 /* YOUR CODE: Lab 3, a window on the stage, then walk across */
+
+
+
+
 
 
 /* YOUR CODE: Be kind to motion (at the very bottom) */
